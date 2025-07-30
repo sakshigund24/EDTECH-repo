@@ -13,15 +13,15 @@ GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
  
  # ==== LangChain Model ====
- llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GEMINI_API_KEY)
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GEMINI_API_KEY)
  
- def run_chain(task, text):
+def run_chain(task, text):
      prompt = ChatPromptTemplate.from_template(f"{task}\n\n{text}")
      chain = prompt | llm
      return chain.invoke({"text": text}).content
  
  # ==== File Reader ====
- def extract_text(file):
+def extract_text(file):
      if file.name.endswith(".pdf"):
          doc = fitz.open(stream=file.read(), filetype="pdf")
          text = ""
@@ -37,7 +37,7 @@ YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
          return "Unsupported file type."
  
  # ==== YouTube Search ====
- def get_youtube_videos(query):
+def get_youtube_videos(query):
      youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
      req = youtube.search().list(q=query, part="snippet", maxResults=3)
      res = req.execute()
@@ -50,8 +50,8 @@ YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
      return videos
  
  # ==== Streamlit UI ====
- st.set_page_config(page_title="📘 Educational Content Generator", layout="centered")
- st.title("📘 Educational Content Generator Agent")
+st.set_page_config(page_title="📘 Educational Content Generator", layout="centered")
+st.title("📘 Educational Content Generator Agent")
  
  uploaded_file = st.file_uploader("Upload Document (PDF, Word, TXT)", type=["pdf", "docx", "txt"])
  custom_text = st.text_area("Enter your topic/query (e.g. 'Summarize chapter 2'): ")
