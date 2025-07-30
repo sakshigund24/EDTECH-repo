@@ -16,9 +16,10 @@ YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GEMINI_API_KEY)
 
 def run_chain(task, text):
-    prompt = ChatPromptTemplate.from_template(f"{task}\n\n{text}")
+    prompt = ChatPromptTemplate.from_template("{task}\n\n{text}")
     chain = prompt | llm
-    return chain.invoke({"text": text}).content
+    return chain.invoke({"task": task, "text": text}).content
+
 
 # ==== File Reader ====
 def extract_text(file):
