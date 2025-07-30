@@ -1,15 +1,15 @@
 
 #app.py
- import os
- import streamlit as st
- from langchain_google_genai import ChatGoogleGenerativeAI
- from langchain.prompts import ChatPromptTemplate
- from googleapiclient.discovery import build
- import fitz  # PyMuPDF
- import docx
+import os
+import streamlit as st
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.prompts import ChatPromptTemplate
+from googleapiclient.discovery import build
+import fitz  # PyMuPDF
+import docx
  
  # ==== CONFIG ====
- GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
  
  # ==== LangChain Model ====
