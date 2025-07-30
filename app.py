@@ -57,13 +57,13 @@ uploaded_file = st.file_uploader("Upload Document (PDF, Word, TXT)", type=["pdf"
 custom_text = st.text_area("Enter your topic/query (e.g. 'Summarize chapter 2'): ")
  
 col1, col2, col3, col4 = st.columns(4)
- with col1:
+with col1:
      do_summary = st.checkbox("Summarize")
- with col2:
+with col2:
      do_flashcards = st.checkbox("Flashcards")
- with col3:
+with col3:
      do_quiz = st.checkbox("Quiz")
- with col4:
+with col4:
      do_youtube = st.checkbox("Suggest Videos")
  
  if st.button("Generate"):
