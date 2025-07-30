@@ -10,7 +10,7 @@ import docx
 
 # ==== CONFIG ====
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
+YOUTUBE_API_KEY = "AIzaSyCjHavqAipPgub3FbTNYLUEyahEh_QhhMI"
 
 # ==== LangChain Model ====
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GEMINI_API_KEY)
