@@ -53,10 +53,10 @@ def get_youtube_videos(query):
 st.set_page_config(page_title="📘 Educational Content Generator", layout="centered")
 st.title("📘 Educational Content Generator Agent")
  
- uploaded_file = st.file_uploader("Upload Document (PDF, Word, TXT)", type=["pdf", "docx", "txt"])
- custom_text = st.text_area("Enter your topic/query (e.g. 'Summarize chapter 2'): ")
+uploaded_file = st.file_uploader("Upload Document (PDF, Word, TXT)", type=["pdf", "docx", "txt"])
+custom_text = st.text_area("Enter your topic/query (e.g. 'Summarize chapter 2'): ")
  
- col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4 = st.columns(4)
  with col1:
      do_summary = st.checkbox("Summarize")
  with col2:
