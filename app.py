@@ -66,7 +66,7 @@ with col3:
 with col4:
      do_youtube = st.checkbox("Suggest Videos")
  
- if st.button("Generate"):
+if st.button("Generate"):
      extracted_text = ""
      if uploaded_file:
          extracted_text = extract_text(uploaded_file)
